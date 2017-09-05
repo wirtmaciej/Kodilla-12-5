@@ -9,11 +9,15 @@ function getQuote() {
 }
 
 function createTweet(input) {
-    var data = input[0];
 
+    if (!input.length) {
+        return;
+    }
+
+    var data = input[0];
     var quoteText = $(data.content).text().trim();
     var quoteAuthor = data.title;
-
+    
     if (!quoteAuthor.length) {
         quoteAuthor = "Unknown author";
     }
